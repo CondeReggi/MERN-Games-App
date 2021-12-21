@@ -1,18 +1,16 @@
 const express = require('express');
 const { check } = require('express-validator');
-const { agregarCategoria, buscarCategorias, borrarCategoria } = require('../controllers/categoryController');
 const { validarCampos } = require('../middlewares/validarCampos');
 const router = express.Router();
+const { agregarVideojuego, listarVideojuegos, eliminarVideojuego } = require('../controllers/videojuegosController')
 
-// MVC => Model View Controller
+router.get('/videogames', listarVideojuegos );
 
-router.post('/crear', agregarCategoria );
-
-router.get('/categorias', buscarCategorias );
+router.post('/crear', agregarVideojuego );
 
 router.delete('/:id' , [
     check('id','Tiene que ser un id valido').isMongoId(),
     validarCampos
-] , borrarCategoria )
+] , eliminarVideojuego  )
 
 module.exports = router;

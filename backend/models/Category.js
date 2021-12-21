@@ -7,6 +7,8 @@ const CategoriaSchema = Schema({
         unique: true,
         maxlength: 32,
     }
+},{
+    timestamps: true
 })
 
 module.exports = model( 'Categoria' , CategoriaSchema )
