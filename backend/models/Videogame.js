@@ -28,7 +28,7 @@ const videoGameSchema = Schema({
         type: Number
     },
     foto: {
-        data: Buffer, // Serie de numeros para guardar la imagen
+        data: Buffer, 
         contentType: String
     }
 },{
