@@ -18,7 +18,8 @@ const agregarVideojuego = (req, res = response) => {
             })
         }
 
-        const { name, descripcion, precio, categoria, cantidad } = fields;
+        const { name, descripcion, precio, categoria, cantidad } = fields; 
+        
         let videogame = new Videojuego(fields);
 
         if (files.foto) {
