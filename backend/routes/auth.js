@@ -2,13 +2,13 @@ const express = require('express');
 const router = express.Router();
 
 const { check } = require('express-validator');
-const { singUp } = require('../controllers/authController');
+const { singUp, singIn } = require('../controllers/authController');
 const { validarCampos } = require('../middlewares/validarCampos');
 
 // Post Registro / Login
 
 router.post('/singup', singUp );
 
-router.post('/singin', singUp );
+router.post('/singin', singIn );
 
 module.exports = router;
